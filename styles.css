@@ -1,1 +1,8 @@
 /*  your css code here. If applicable */
+li {
+  margin: 10px 0;
+}
+
+button {
+  cursor: pointer;
+}
