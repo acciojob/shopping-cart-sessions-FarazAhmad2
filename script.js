@@ -9,7 +9,7 @@ const products = [
   { id: 5, name: "Product 5", price: 50 },
 ];
 
-let cartProducts = JSON.parse(sessionStorage.getItem("cartProducts")) || [];
+let cartProducts = JSON.parse(sessionStorage.getItem("cart")) || [];
 
 // DOM elements
 const productList = document.getElementById("product-list");
@@ -40,7 +40,7 @@ function addToCart(productId) {
 	 const product = products.find((product) => product.id === Number(productId));
   if (product) {
     cartProducts.push(product);
-    sessionStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    sessionStorage.setItem("cart", JSON.stringify(cartProducts));
   }
 }
 
@@ -49,7 +49,7 @@ function removeFromCart(productId) {
 	const index = cartProducts.findIndex((product) => product.id === Number(productId));
   if (index !== -1) {
     cartProducts.splice(index, 1); // Remove one item from the cartProducts array at the found index
-    sessionStorage.setItem("cartProducts", JSON.stringify(cartProducts));
+    sessionStorage.setItem("cart", JSON.stringify(cartProducts));
   }
 }
 
